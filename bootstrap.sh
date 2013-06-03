@@ -14,7 +14,7 @@ sudo apt-get -yq install build-essential git git-extras wget zip unzip p7zip pyt
 
 echo 'Installing Packages with PIP'
 
-sudo pip install unittest2 Jinja2 GitPython PIL Paver Sphinx WebOb WebTest pyflakes
+sudo pip install unittest2 Jinja2 GitPython Sphinx WebOb WebTest pyflakes
 
 echo 'Installing Karma'
 
@@ -43,5 +43,5 @@ echo 'Downloading App Server script'
 
 cd ~/bin
 
-wget -O app-server http://pastie.org/pastes/5489856/download?key=nrv7i9z3tj4xhg2xr8zxgg
+wget -O app-server https://bitbucket.org/cloudsherpas/ubuntu-environment-bootstrap/raw/master/app-server.sh
 chmod +x app-server
