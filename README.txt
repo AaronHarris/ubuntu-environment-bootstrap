@@ -10,4 +10,4 @@ Usage
 
 Just run it:
 
-    TODO
+    cd /tmp && wget https://bitbucket.org/cloudsherpas/ubuntu-environment-bootstrap/raw/master/bootstrap.sh && bash bootstrap.sh
