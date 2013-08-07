@@ -10,7 +10,7 @@ sudo add-apt-repository ppa:webupd8team/sublime-text-2
 sudo add-apt-repository ppa:chris-lea/node.js
 
 sudo apt-get update
-sudo apt-get -yq install build-essential git git-extras wget zip unzip p7zip python-crypto python-httplib2 python-imaging python-lxml python-markupsafe python-oauth python-openssl python-pip python-setuptools python-simplejson phantomjs nodejs npm sublime-text
+sudo apt-get -yq install build-essential git git-extras wget zip unzip p7zip python-crypto python-httplib2 python-imaging python-lxml python-markupsafe python-oauth python-openssl python-pip python-setuptools python-simplejson phantomjs nodejs sublime-text
 
 echo 'Installing Packages with PIP'
 
@@ -25,10 +25,10 @@ echo 'Downloading App Engine SDK'
 cd /tmp
 
 rm google_appengine_*
-wget http://googleappengine.googlecode.com/files/google_appengine_1.8.0.zip
+wget http://googleappengine.googlecode.com/files/google_appengine_1.8.2.zip
 
 echo 'Extracting App Engine SDK'
-unzip google_appengine_1.8.0.zip
+unzip google_appengine_1.8.2.zip
 
 echo 'Moving to ~/bin'
 rm -rf ~/bin/google_appengine
