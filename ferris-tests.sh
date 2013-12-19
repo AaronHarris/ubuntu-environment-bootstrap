@@ -1,1 +1,1 @@
-nosetests --with-ferris --logging-level=INFO --gae-sdk-path=$APPENGINE_SDK_PATH $@
+nosetests --with-ferris --logging-level=INFO --gae-sdk-path=$HOME/google-cloud-sdk/bin $@
