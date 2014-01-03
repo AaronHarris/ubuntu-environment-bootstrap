@@ -16,12 +16,12 @@ sudo apt-get -yq install curl build-essential git git-extras wget zip unzip p7zi
 
 echo 'Installing Python Packages with pip'
 
-sudo pip install unittest2 Jinja2 GitPython Sphinx WebOb WebTest pyflakes beautifulsoup4 nose
+sudo pip install unittest2 Jinja2 GitPython Sphinx WebOb WebTest flake8 pyflakes beautifulsoup4 nose
 sudo pip install --pre ferrisnose
 
-echo 'Installing Karma'
+echo 'Installing Node packages (karma, jshint, bower)'
 
-sudo npm install -g karma
+sudo npm install -g karma jshint bower
 
 echo 'Downloading Cloud SDK'
 echo 'About to download and run the Cloud SDK installer. Please be sure do the following:'
