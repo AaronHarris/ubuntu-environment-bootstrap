@@ -1,4 +1,4 @@
-#/bin/bash
+#!/bin/bash
 
 NAME=${PWD##*/}
 DATA_PATH=~/.appengine_data/$NAME
