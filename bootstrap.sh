@@ -6,13 +6,21 @@ set -e
 
 sudo echo 'Development Environment Bootstrap Script'
 
-echo 'Installing Ubuntu Packages with apt'
+echo 'Adding package sources. Be sure to accept the next couple of prompts'
+echo 'Press enter when you feel like you are ready to party'
+read _
 
 sudo add-apt-repository ppa:webupd8team/sublime-text-3
 sudo add-apt-repository ppa:chris-lea/node.js
+sudo add-apt-repository ppa:webupd8team/java
 
 sudo apt-get update
-sudo apt-get -yq install curl build-essential git git-extras wget zip unzip p7zip python-crypto python-httplib2 python-imaging python-lxml python-markupsafe python-oauth python-openssl python-pip python-setuptools python-simplejson phantomjs nodejs sublime-text-installer
+
+echo 'Installing Ubuntu Packages with apt'
+
+# Accept oracle license
+sudo echo oracle-java7-installer shared/accepted-oracle-license-v1-1 select true | sudo /usr/bin/debconf-set-selections
+sudo apt-get -yq install curl build-essential git git-extras wget zip unzip p7zip python-crypto python-httplib2 python-imaging python-lxml python-markupsafe python-oauth python-openssl python-pip python-setuptools python-simplejson phantomjs nodejs sublime-text-installer oracle-java7-installer
 
 echo 'Installing Python Packages with pip'
 
