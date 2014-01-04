@@ -1,4 +1,4 @@
-!/bin/bash
+#!/bin/bash
 
 set -e
 
@@ -26,6 +26,9 @@ echo 'Installing Python Packages with pip'
 
 sudo pip install unittest2 Jinja2 GitPython Sphinx WebOb WebTest flake8 pyflakes beautifulsoup4 nose
 sudo pip install --pre ferrisnose
+
+# Required to get PIL to work with app engine
+sudo ln -s /usr/local/lib/python2.7/dist-packages/PIL /usr/lib/python2.7/PIL
 
 echo 'Installing Node packages (karma, jshint, bower)'
 
