@@ -26,10 +26,10 @@ if [ ! -h /usr/lib/python2.7/PIL ]; then
     fi
 fi
 if [ ! -h /usr/lib/python2.7/_imaging.so ]; then
-    if [ -d /usr/lib/python2.7/dist-packages/_imaging.so ]; then
+    if [ -e /usr/lib/python2.7/dist-packages/_imaging.so ]; then
         sudo ln -s /usr/lib/python2.7/dist-packages/_imaging.so /usr/lib/python2.7/_imaging.so
     fi
-    if [ -d /usr/local/lib/python2.7/dist-packages/_imaging.so ]; then
+    if [ -e /usr/local/lib/python2.7/dist-packages/_imaging.so ]; then
         sudo ln -s /usr/local/lib/python2.7/dist-packages/_imaging.so /usr/lib/python2.7/_imaging.so
     fi
 fi
