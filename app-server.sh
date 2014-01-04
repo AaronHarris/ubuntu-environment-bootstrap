@@ -7,7 +7,7 @@ if [ ! -d "$DATA_PATH" ]; then
     mkdir -p $DATA_PATH
 fi
 
-if [ -e "./.gitignore"]; then
+if [ -e "./.gitignore" ]; then
     if ! grep -Fxq ".appengine_data" .gitignore then
         echo "Configuring gitignore"
         echo ".appengine_data" >> .gitignore
