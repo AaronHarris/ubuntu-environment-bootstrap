@@ -28,7 +28,23 @@ sudo pip install unittest2 Jinja2 GitPython Sphinx WebOb WebTest flake8 pyflakes
 sudo pip install --pre ferrisnose
 
 # Required to get PIL to work with app engine
-sudo ln -s /usr/local/lib/python2.7/dist-packages/PIL /usr/lib/python2.7/PIL
+if [ ! -h /usr/lib/python2.7/PIL ]; then
+    if [ -d /usr/lib/python2.7/dist-packages/PIL ]; then
+        sudo ln -s /usr/lib/python2.7/dist-packages/PIL /usr/lib/python2.7/PIL
+    fi
+    if [ -d /usr/local/lib/python2.7/dist-packages/PIL ]; then
+        sudo ln -s /usr/local/lib/python2.7/dist-packages/PIL /usr/lib/python2.7/PIL
+    fi
+fi
+if [ ! -h /usr/lib/python2.7/_imaging.so ]; then
+    if [ -d /usr/lib/python2.7/dist-packages/_imaging.so ]; then
+        sudo ln -s /usr/lib/python2.7/dist-packages/_imaging.so /usr/lib/python2.7/_imaging.so
+    fi
+    if [ -d /usr/local/lib/python2.7/dist-packages/_imaging.so ]; then
+        sudo ln -s /usr/local/lib/python2.7/dist-packages/_imaging.so /usr/lib/python2.7/_imaging.so
+    fi
+fi
+
 
 echo 'Installing Node packages (karma, jshint, bower)'
 

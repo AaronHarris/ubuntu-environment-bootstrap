@@ -18,7 +18,20 @@ sudo pip install --pre ferrisnose
 
 # Required to get PIL to work with app engine
 if [ ! -h /usr/lib/python2.7/PIL ]; then
-    sudo ln -s /usr/local/lib/python2.7/dist-packages/PIL /usr/lib/python2.7/PIL
+    if [ -d /usr/lib/python2.7/dist-packages/PIL ]; then
+        sudo ln -s /usr/lib/python2.7/dist-packages/PIL /usr/lib/python2.7/PIL
+    fi
+    if [ -d /usr/local/lib/python2.7/dist-packages/PIL ]; then
+        sudo ln -s /usr/local/lib/python2.7/dist-packages/PIL /usr/lib/python2.7/PIL
+    fi
+fi
+if [ ! -h /usr/lib/python2.7/_imaging.so ]; then
+    if [ -d /usr/lib/python2.7/dist-packages/_imaging.so ]; then
+        sudo ln -s /usr/lib/python2.7/dist-packages/_imaging.so /usr/lib/python2.7/_imaging.so
+    fi
+    if [ -d /usr/local/lib/python2.7/dist-packages/_imaging.so ]; then
+        sudo ln -s /usr/local/lib/python2.7/dist-packages/_imaging.so /usr/lib/python2.7/_imaging.so
+    fi
 fi
 
 echo 'Installing Node packages (bower)'
@@ -54,3 +67,6 @@ chmod +x app-server
 
 wget -O ferris-tests https://bitbucket.org/cloudsherpas/ubuntu-environment-bootstrap/raw/master/ferris-tests.sh
 chmod +x ferris-tests
+
+# Link workspace
+ln -s /vagrant /home/vagrant/workspace
