@@ -8,7 +8,7 @@ if [ ! -d "$DATA_PATH" ]; then
 fi
 
 if [ -e "./.gitignore" ]; then
-    if ! grep -Fxq ".appengine_data" .gitignore then
+    if ! grep -Fxq ".appengine_data" .gitignore; then
         echo "Configuring gitignore"
         echo ".appengine_data" >> .gitignore
         git add .gitignore
