@@ -1,0 +1,10 @@
+{
+    "installed_packages":
+    [
+        "SublimeLinter",
+        "SublimeLinter-annotations",
+        "SublimeLinter-flake8",
+        "SublimeLinter-jshint",
+        "SublimeLinter-json"
+    ]
+}

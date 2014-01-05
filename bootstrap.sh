@@ -75,3 +75,16 @@ chmod +x app-server
 
 wget -O ferris-tests https://bitbucket.org/cloudsherpas/ubuntu-environment-bootstrap/raw/master/ferris-tests.sh
 chmod +x ferris-tests
+
+# Sublime Text Plugins
+echo "Installing sublime package control and setting up packages"
+
+mkdir -p ~/.config/sublime-text-3/Installed\ Packages
+cd ~/.config/sublime-text-3/Installed\ Packages
+wget https://sublime.wbond.net/Package%20Control.sublime-package
+
+mkdir -p ~/.config/sublime-text-3/Packages/User
+cd ~/.config/sublime-text-3/Packages/User
+
+wget -O Package\ Control.sublime-settings https://bitbucket.org/cloudsherpas/ubuntu-environment-bootstrap/raw/master/default-sublime-packages.json
+wget -O Preferences.sublime-settings https://bitbucket.org/cloudsherpas/ubuntu-environment-bootstrap/raw/master/default-sublime-settings.json
