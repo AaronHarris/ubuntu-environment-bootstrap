@@ -50,6 +50,16 @@ echo 'Installing Node packages (karma, jshint, bower)'
 
 sudo npm install -g karma jshint bower
 
+
+echo "Installing Google Chrome"
+
+cd /tmp
+
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo dpkg -i google-chrome-stable_current_amd64.deb
+sudo apt-get -f install
+
+
 echo 'Downloading Cloud SDK'
 
 cd ~
