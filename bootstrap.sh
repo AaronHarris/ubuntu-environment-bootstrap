@@ -73,11 +73,12 @@ rm google-cloud-sdk.tar.gz
 env CLOUDSDK_REINSTALL_COMPONENTS=pkg-core,pkg-python ./google-cloud-sdk/install.sh
 
 # Configure path
-echo "PATH=\"\$HOME/google-cloud-sdk/bin:\$PATH\"" >> ~/.profile
+echo "PATH=\"\$HOME/google-cloud-sdk/bin:\$HOME/bin:\$PATH\"" >> ~/.profile
 echo "export APPENGINE_SDK_PATH=\$HOME/google-cloud-sdk/platform/google_appengine" >> ~/.profile
 
 echo 'Downloading Support Scripts (app-server and ferris-tests)'
 
+mkdir -p ~/bin
 cd ~/bin
 
 wget -O app-server https://bitbucket.org/cloudsherpas/ubuntu-environment-bootstrap/raw/master/app-server.sh

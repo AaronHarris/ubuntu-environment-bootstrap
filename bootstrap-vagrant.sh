@@ -51,7 +51,7 @@ rm google-cloud-sdk.tar.gz
 env CLOUDSDK_REINSTALL_COMPONENTS=pkg-core,pkg-python ./google-cloud-sdk/install.sh
 
 # Configure path
-echo "PATH=\"\$HOME/google-cloud-sdk/bin:\$PATH\"" >> /home/vagrant/.profile
+echo "PATH=\"\$HOME/google-cloud-sdk/bin:\$HOME/bin:\$PATH\"" >> /home/vagrant/.profile
 echo "export APPENGINE_SDK_PATH=\$HOME/google-cloud-sdk/platform/google_appengine" >> /home/vagrant/.profile
 
 echo 'Downloading Support Scripts (app-server and ferris-tests)'
