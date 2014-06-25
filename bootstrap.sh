@@ -10,9 +10,9 @@ echo 'Adding package sources. Be sure to accept the next couple of prompts'
 echo 'Press enter when you feel like you are ready to party'
 read _
 
-sudo add-apt-repository ppa:webupd8team/sublime-text-3
-sudo add-apt-repository ppa:chris-lea/node.js
-sudo add-apt-repository ppa:webupd8team/java
+sudo add-apt-repository "deb http://ppa.launchpad.net/webupd8team/sublime-text-3/ubuntu trusty main"
+sudo add-apt-repository "deb http://ppa.launchpad.net/chris-lea/node.js/ubuntu trusty main"
+sudo add-apt-repository "deb http://ppa.launchpad.net/webupd8team/java/ubuntu trusty main"
 
 sudo apt-get update
 
@@ -20,7 +20,13 @@ echo 'Installing Ubuntu Packages with apt'
 
 # Accept oracle license
 sudo echo oracle-java7-installer shared/accepted-oracle-license-v1-1 select true | sudo /usr/bin/debconf-set-selections
-sudo apt-get -yq install curl wget build-essential git git-extras wget zip unzip p7zip python-crypto python-httplib2 python-imaging python-lxml python-markupsafe python-oauth python-openssl python-pip python-setuptools python-simplejson phantomjs nodejs sublime-text-installer oracle-java7-installer
+sudo apt-get -yq install curl wget build-essential git git-extras wget zip unzip p7zip python-crypto python-httplib2 python-imaging python-lxml python-markupsafe python-oauth python-openssl python-pip python-setuptools python-simplejson nodejs sublime-text-installer oracle-java7-installer
+
+# install phantomjs
+cd /usr/local/share
+sudo wget https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-1.9.7-linux-x86_64.tar.bz2
+sudo tar xjf phantomjs-1.9.7-linux-x86_64.tar.bz2
+sudo ln -s /usr/local/share/phantomjs-1.9.7-linux-x86_64/bin/phantomjs /usr/bin/phantomjs
 
 echo 'Installing Python Packages with pip'
 
