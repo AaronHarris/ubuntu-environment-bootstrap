@@ -10,9 +10,9 @@ echo 'Adding package sources. Be sure to accept the next couple of prompts'
 echo 'Press enter when you feel like you are ready to party'
 read _
 
-sudo add-apt-repository ppa:webupd8team/sublime-text-3
-sudo add-apt-repository ppa:chris-lea/node.js
-sudo add-apt-repository ppa:webupd8team/java
+sudo add-apt-repository -y ppa:webupd8team/sublime-text-3
+sudo add-apt-repository -y ppa:chris-lea/node.js
+sudo add-apt-repository -y ppa:webupd8team/java
 
 sudo apt-get update
 
