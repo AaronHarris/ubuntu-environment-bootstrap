@@ -4,7 +4,7 @@
 
 sudo apt-add-repository -y ppa:chris-lea/node.js 
 sudo apt-get update
-sudo apt-get install nodejs
+sudo apt-get install -y nodejs
 npm config set prefix /usr
 sudo npm install -g npm
 npm config set prefix ~/.npm-packages
