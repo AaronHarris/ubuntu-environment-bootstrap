@@ -11,7 +11,6 @@ echo 'Press enter when you feel like you are ready to party'
 read _
 
 sudo add-apt-repository -y ppa:webupd8team/sublime-text-3
-sudo add-apt-repository -y ppa:chris-lea/node.js
 sudo add-apt-repository -y ppa:webupd8team/java
 
 sudo apt-get update
@@ -20,7 +19,7 @@ echo 'Installing Ubuntu Packages with apt'
 
 # Accept oracle license
 sudo echo oracle-java7-installer shared/accepted-oracle-license-v1-1 select true | sudo /usr/bin/debconf-set-selections
-sudo apt-get -yq install curl wget build-essential git git-extras wget zip unzip p7zip python-crypto python-httplib2 python-imaging python-lxml python-markupsafe python-oauth python-openssl python-pip python-setuptools python-simplejson phantomjs nodejs sublime-text-installer oracle-java7-installer
+sudo apt-get -yq install curl wget build-essential git git-extras wget zip unzip p7zip python-crypto python-httplib2 python-imaging python-lxml python-markupsafe python-oauth python-openssl python-pip python-setuptools python-simplejson sublime-text-installer oracle-java7-installer
 
 echo 'Installing Python Packages with pip'
 
@@ -46,9 +45,11 @@ if [ ! -h /usr/lib/python2.7/_imaging.so ]; then
 fi
 
 
-echo 'Installing Node packages (karma, jshint, bower)'
+echo 'Installing Node and npm'
 
-sudo npm install -g karma jshint bower
+cd /tmp
+wget https://bitbucket.org/cloudsherpas/ubuntu-environment-bootstrap/raw/master/bootstrap-node.sh
+bash bootstrap-node.sh
 
 
 echo "Installing Google Chrome"

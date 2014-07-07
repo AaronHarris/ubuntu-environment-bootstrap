@@ -1,5 +1,7 @@
 #!/bin/bash
 
+#npm ls -gp  --depth=0 | awk -F/node_modules/ '{print $2}' | grep -vE '^(npm|)$' | xargs npm -g rm
+
 sudo apt-add-repository -y ppa:chris-lea/node.js 
 sudo apt-get update
 sudo apt-get install nodejs
