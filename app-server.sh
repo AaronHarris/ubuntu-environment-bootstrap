@@ -12,7 +12,7 @@ if [ -e "./.gitignore" ]; then
         echo "Configuring gitignore"
         echo ".appengine_data" >> .gitignore
         git add .gitignore
-        git commit -am "Auto-ignoring App Engine local data"
+        git commit .gitignore -m "Auto-ignoring App Engine local data"
     fi
 fi
 
