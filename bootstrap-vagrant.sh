@@ -9,7 +9,7 @@ sudo echo 'Development Environment Bootstrap Script'
 echo 'Installing Ubuntu Packages with apt'
 
 # Accept oracle license
-sudo apt-get -yq install curl wget build-essential git git-extras wget zip unzip p7zip python-crypto python-httplib2 python-imaging python-lxml python-markupsafe python-oauth python-openssl python-pip python-setuptools python-simplejson nodejs npm
+sudo apt-get -yq install curl wget build-essential git git-extras wget zip unzip p7zip python-crypto python-httplib2 python-imaging python-lxml python-markupsafe python-oauth python-openssl python-pip python-setuptools python-simplejson
 
 echo 'Installing Python Packages with pip'
 
@@ -34,9 +34,11 @@ if [ ! -h /usr/lib/python2.7/_imaging.so ]; then
     fi
 fi
 
-echo 'Installing Node packages (bower)'
+echo 'Installing Node and npm with packages'
 
-sudo npm install -g bower
+cd /tmp
+wget https://raw.githubusercontent.com/AaronHarris/ubuntu-environment-bootstrap/master/bootstrap-node.sh
+bash bootstrap-node.sh
 
 echo 'Downloading Cloud SDK'
 

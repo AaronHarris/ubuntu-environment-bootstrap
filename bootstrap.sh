@@ -44,23 +44,20 @@ if [ ! -h /usr/lib/python2.7/_imaging.so ]; then
     fi
 fi
 
-
-echo 'Installing Node and npm'
+echo 'Installing Node and npm with packages'
 
 cd /tmp
-wget https://bitbucket.org/cloudsherpas/ubuntu-environment-bootstrap/raw/master/bootstrap-node.sh
+wget https://raw.githubusercontent.com/AaronHarris/ubuntu-environment-bootstrap/master/bootstrap-node.sh
 bash bootstrap-node.sh
-
 
 echo "Installing Google Chrome"
 
 cd /tmp
 
-wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-set +e
-sudo dpkg -i google-chrome-stable_current_amd64.deb
-sudo apt-get -fy install
-set -e
+wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
+sudo apt-get update
+sudo apt-get -y install google-chrome-stable
 
 echo 'Downloading Cloud SDK'
 

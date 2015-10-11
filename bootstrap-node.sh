@@ -2,9 +2,8 @@
 
 #npm ls -gp  --depth=0 | awk -F/node_modules/ '{print $2}' | grep -vE '^(npm|)$' | xargs npm -g rm
 
-sudo apt-add-repository -y ppa:chris-lea/node.js 
-sudo apt-get update
-sudo apt-get install -y nodejs
+wget -qO- https://deb.nodesource.com/setup_4.x | bash -
+sudo apt-get install -y nodejs build-essential
 npm config set prefix /usr
 sudo npm install -g npm
 npm config set prefix ~/.npm-packages

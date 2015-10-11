@@ -10,7 +10,7 @@ Usage
 
 Just run it:
 
-    cd /tmp && wget https://bitbucket.org/cloudsherpas/ubuntu-environment-bootstrap/raw/master/bootstrap.sh && bash bootstrap.sh
+    cd /tmp && wget https://raw.githubusercontent.com/AaronHarris/ubuntu-environment-bootstrap/master/bootstrap.sh && bash bootstrap.sh
 
 
 Vagrant
@@ -18,19 +18,19 @@ Vagrant
 
 There is a special bootstrap script for vagrant usage. To get started with vagrant:
 
-  1. Install VirtualBox (4.3 as of now) from https://www.virtualbox.org/wiki/Downloads
+  1. Install VirtualBox (5.0 as of now) from https://www.virtualbox.org/wiki/Downloads
   2. Install vagrant from http://www.vagrantup.com/downloads.html
   3. Install vagrant-vbguest plugin
 
         vagrant plugin install vagrant-vbguest
 
-  3. Add a new box to vagrant for Ubuntu 13.10
+  3. Add a new box to vagrant for Ubuntu 15.10, or another box from [box catalog](https://atlas.hashicorp.com/boxes/search)
 
-        vagrant box add saucy64 http://cloud-images.ubuntu.com/vagrant/saucy/current/saucy-server-cloudimg-amd64-vagrant-disk1.box
+        vagrant box add ubuntu/wily64
 
   4. Clone this repository into your workspace
 
-        git clone https://<username>@bitbucket.org/cloudsherpas/ubuntu-environment-bootstrap.git
+        git clone https://github.com/AaronHarris/ubuntu-environment-bootstrap.git
 
   5. Copy the vagrant file from the bootstrap into your workspace (you should now have workspace/Vagrantfile and workspace/ubuntu-environment-bootstrap)
 
